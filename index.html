@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kevin Levy</title>
+<meta name="description" content="Kevin Levy — astrophysicist and data scientist working across cosmology, climate, and quantitative finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EEF0EC;
+    --paper-raised: #F6F7F3;
+    --ink: #171B22;
+    --muted: #565C68;
+    --blue: #3557B7;
+    --teal: #3F8577;
+    --rule: #D7D9D1;
+    --max: 760px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(53, 87, 183, 0.35);
+    transition: border-color 0.15s ease;
+  }
+  a:hover { border-color: var(--blue); }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .prose {
+    max-width: var(--max);
+  }
+
+  /* Nav */
+  .nav {
+    padding: 28px 0;
+  }
+  .nav .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .nav .name {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 500;
+    border: none;
+    color: var(--ink);
+  }
+  .nav .name:hover { color: var(--blue); }
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+  }
+  .nav a {
+    color: var(--muted);
+    border: none;
+    font-size: 15px;
+  }
+  .nav a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero {
+    padding: 56px 0 96px;
+  }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(40px, 5.4vw, 64px);
+    line-height: 1.05;
+  }
+  .hero .lede {
+    margin-top: 22px;
+    font-size: 19px;
+    color: var(--muted);
+    max-width: 46ch;
+    line-height: 1.6;
+  }
+  .hero .web {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Sections */
+  section {
+    padding: 72px 0;
+    border-top: 1px solid var(--rule);
+  }
+  section .kicker {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+
+  .about p {
+    color: var(--ink);
+  }
+  .about p + p { margin-top: 18px; }
+
+  /* Work */
+  .project {
+    padding: 36px 0;
+  }
+  .project:not(:last-child) {
+    border-bottom: 1px solid var(--rule);
+  }
+  .project h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+  }
+  .project p.desc {
+    color: var(--ink);
+    max-width: var(--max);
+  }
+  .project .stack {
+    margin-top: 16px;
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+  .project .links {
+    margin-top: 14px;
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+  .project .links a {
+    font-size: 15px;
+  }
+  .metric {
+    color: var(--teal);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+
+  /* Papers */
+  .paper {
+    padding: 20px 0;
+  }
+  .paper:not(:last-child) {
+    border-bottom: 1px solid var(--rule);
+  }
+  .paper .cite {
+    font-size: 16.5px;
+  }
+  .paper .venue {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 4px;
+  }
+
+  /* Contact / footer */
+  footer {
+    padding: 72px 0 56px;
+  }
+  footer .lede {
+    color: var(--muted);
+    max-width: 50ch;
+  }
+  footer .channels {
+    margin-top: 28px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
+  footer .fine {
+    margin-top: 56px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 760px) {
+    .hero .wrap {
+      grid-template-columns: 1fr;
+    }
+    .hero .web {
+      max-width: 320px;
+      margin: 0 auto;
+      order: -1;
+    }
+    .wrap { padding: 0 22px; }
+    .nav ul { gap: 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <a class="name" href="#top">Kevin Levy</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#papers">Papers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Finding structure in noise.</h1>
+      <p class="lede">Astrophysicist and data scientist working across cosmology, climate, and quantitative finance — building models that separate real signal from the noise around it.</p>
+    </div>
+    <svg class="web" viewBox="0 0 360 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract diagram of connected nodes, representing large-scale structure">
+      <g stroke="#3557B7" stroke-width="1" opacity="0.45">
+        <line x1="60" y1="70" x2="140" y2="110"/>
+        <line x1="140" y1="110" x2="120" y2="190"/>
+        <line x1="140" y1="110" x2="230" y2="90"/>
+        <line x1="230" y1="90" x2="290" y2="150"/>
+        <line x1="120" y1="190" x2="200" y2="220"/>
+        <line x1="200" y1="220" x2="290" y2="150"/>
+        <line x1="200" y1="220" x2="170" y2="290"/>
+        <line x1="120" y1="190" x2="60" y2="240"/>
+        <line x1="290" y1="150" x2="320" y2="230"/>
+        <line x1="230" y1="90" x2="280" y2="40"/>
+        <line x1="60" y1="70" x2="30" y2="140"/>
+        <line x1="30" y1="140" x2="60" y2="240"/>
+        <line x1="200" y1="220" x2="320" y2="230"/>
+      </g>
+      <g fill="#171B22">
+        <circle cx="60" cy="70" r="3.5"/>
+        <circle cx="140" cy="110" r="5.5"/>
+        <circle cx="230" cy="90" r="4"/>
+        <circle cx="120" cy="190" r="6.5"/>
+        <circle cx="290" cy="150" r="4.5"/>
+        <circle cx="200" cy="220" r="5"/>
+        <circle cx="170" cy="290" r="3.5"/>
+        <circle cx="60" cy="240" r="4"/>
+        <circle cx="320" cy="230" r="3.5"/>
+        <circle cx="280" cy="40" r="3"/>
+        <circle cx="30" cy="140" r="3"/>
+      </g>
+      <g fill="#3F8577" opacity="0.8">
+        <circle cx="120" cy="190" r="2"/>
+        <circle cx="140" cy="110" r="2"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <h2 class="kicker">About</h2>
+    <div class="prose">
+      <p>I spent the last several years mapping the universe's large-scale structure using gravitational lensing of the cosmic microwave background, as part of the South Pole Telescope Collaboration. Along the way I built a habit that travels well outside astrophysics: modeling how uncertainty and structure show up in noisy data, and building pipelines that can be trusted to run correctly the first time.</p>
+      <p>I completed my PhD in Astrophysics at the University of Melbourne in 2026, with two first-author papers on CMB lensing and covariance estimation. Before that, I worked as a BI developer, and I hold a certification in applied data science. I'm now applying the same statistical toolkit — Bayesian inference, MCMC, large covariance matrices, HPC pipelines — to problems in finance, satellite-derived climate data, and machine learning.</p>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2 class="kicker">Work</h2>
+
+    <div class="project">
+      <h3>Flood detection from satellite radar</h3>
+      <p class="desc">A U-Net segmentation model with a ResNet34 encoder that finds flooded terrain in Sentinel-1 radar imagery, trained on the Sen1Floods11 dataset. Radar sees through cloud cover, which matters because the storms that cause floods are usually the same ones blocking optical satellites — but the signal is noisy and hard to label, so the model has to hold up on messy real-world scenes rather than just clean examples. It reaches a mean IoU of <span class="metric">0.79</span> and runs as a live, containerized API on Google Cloud Run.</p>
+      <div class="stack">PyTorch · U-Net / ResNet34 · Sentinel-1 SAR · Docker · Vertex AI · Cloud Run</div>
+      <div class="links">
+        <a href="#" data-fill="github-flood">View on GitHub</a>
+        <a href="#" data-fill="demo-flood">Try the live demo</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Volatility forecasting</h3>
+      <p class="desc">A comparison of three approaches to forecasting S&amp;P 500 volatility — GARCH, XGBoost, and LSTM — evaluated with walk-forward validation and QLIKE loss, the metric that actually reflects how a volatility forecast will be used, rather than plain squared error. XGBoost came out ahead across every metric tested, which says as much about the limits of the classical model on this data as it does about gradient boosting.</p>
+      <div class="stack">Python · XGBoost · GARCH · LSTM · walk-forward validation · QLIKE</div>
+      <div class="links">
+        <a href="#" data-fill="github-vol">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Bayesian redshift distribution modeling</h3>
+      <p class="desc">Every large-scale structure measurement depends on knowing how far away the galaxies actually are, and photometric surveys only give a rough estimate of that. This project fits Gaussian mixture models to photometric redshift distributions using MCMC sampling, uses the Bayesian information criterion to decide how many components the data actually supports, and corrects iteratively for selection bias — the kind of estimation problem that shows up anywhere a sample isn't quite representative of the population behind it.</p>
+      <div class="stack">Python · emcee (MCMC) · Gaussian mixture models · BIC model selection</div>
+      <div class="links">
+        <a href="#" data-fill="github-redshift">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="papers">
+  <div class="wrap">
+    <h2 class="kicker">Papers</h2>
+
+    <div class="paper">
+      <div class="cite">Levy et al., 2023</div>
+      <div class="venue">Journal of Cosmology and Astroparticle Physics (JCAP) — <a href="#" data-fill="paper-2023">read the paper</a></div>
+    </div>
+    <div class="paper">
+      <div class="cite">Levy et al., 2026</div>
+      <div class="venue">arXiv:2607.05784 — <a href="https://arxiv.org/abs/2607.05784" target="_blank" rel="noopener">read the paper</a></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 class="kicker">Contact</h2>
+    <p class="lede">Based in Luxembourg, open to opportunities in Paris, New York, London, and beyond. The fastest way to reach me is email.</p>
+    <div class="channels">
+      <a href="mailto:kevin@example.com" data-fill="email">kevin@example.com</a>
+      <a href="#" data-fill="linkedin">LinkedIn</a>
+      <a href="#" data-fill="github">GitHub</a>
+    </div>
+    <p class="fine">Kevin Levy · Astrophysics, University of Melbourne, 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
