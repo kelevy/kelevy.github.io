@@ -62,20 +62,7 @@
 
   /* Masthead */
   .masthead { padding: 88px 0 8px; }
-  .masthead h1 {
-    font-size: clamp(38px, 5vw, 58px);
-    line-height: 1.08;
-    max-width: 12ch;
-  }
-  .byline {
-    margin-top: 16px;
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 15.5px;
-    color: var(--muted);
-  }
   .lede {
-    margin-top: 26px;
     font-size: 18px;
     max-width: var(--text-col);
     color: var(--ink);
@@ -121,34 +108,20 @@
   <div class="wrap">
     <a class="name" href="#top">Kevin Levy</a>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#work">Projects</a></li>
     </ul>
   </div>
 </div>
 
 <div class="masthead" id="top">
   <div class="wrap">
-    <h1>Finding structure in noise.</h1>
-    <p class="byline">PhD, Astrophysics — University of Melbourne, 2026. South Pole Telescope Collaboration.</p>
-    <p class="lede">I build statistical models that separate signal from noise — in CMB lensing maps, satellite radar, and market volatility. My toolkit is Bayesian inference, MCMC, and large covariance matrices, wrapped in Python pipelines built to run unattended on HPC clusters and in the cloud.</p>
+    <p class="lede" style="margin-top:0; font-size:19px;">Data Scientist and PhD Astrophysicist specializing in statistical inference, machine learning, and scientific computing. Experienced in building end-to-end Python pipelines and HPC workflows, from raw data acquisition to statistical modeling and uncertainty quantification.</p>
   </div>
 </div>
 
-<section class="about divider" id="about">
-  <div class="page">
-    <h2 class="heading">About</h2>
-    <div class="about">
-      <p>I spent the last several years mapping the universe's large-scale structure using gravitational lensing of the cosmic microwave background. Along the way I built a habit that travels well outside astrophysics: modeling how uncertainty and structure show up in noisy data, and building pipelines that can be trusted to run correctly the first time.</p>
-      <p>Before the PhD, I worked as a BI developer, and I've kept building since — a certification in applied data science, and three independent projects spanning satellite imagery, financial time series, and cosmological surveys, described below alongside the two papers that came out of the PhD itself.</p>
-    </div>
-  </div>
-</section>
-
 <section class="divider" id="work">
   <div class="page">
-    <h2 class="heading">Selected work</h2>
+    <h2 class="heading">Projects</h2>
 
     <div class="work-item">
       <div class="row">
@@ -262,19 +235,6 @@
     </div>
   </div>
 </section>
-
-<footer class="divider" id="contact">
-  <div class="page">
-    <h2 class="heading">Contact</h2>
-    <p class="lede2">Based in Luxembourg, open to opportunities in Paris, New York, London, and beyond. The fastest way to reach me is email.</p>
-    <div class="channels">
-      <a href="mailto:kevin@example.com" data-fill="email">kevin@example.com</a>
-      <a href="#" data-fill="linkedin">LinkedIn</a>
-      <a href="#" data-fill="github">GitHub</a>
-    </div>
-    <p class="fine">Kevin Levy · Astrophysics, University of Melbourne, 2026</p>
-  </div>
-</footer>
 
 </body>
 </html>
