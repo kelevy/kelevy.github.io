@@ -138,7 +138,6 @@
             <img src="assets/truth_vs_prediction.png" alt="Comparison of SAR input, ground truth flood mask, and the model's predicted flood mask along a river channel">
             <div class="cap">SAR input, ground truth, and predicted flood extent along a river channel, on a held-out tile.</div>
           </div>
-          <p class="desc" style="margin-top:18px; font-size:15px; color:var(--muted);">Scope note: the model performs per-image water segmentation — identifying standing water in a single SAR scene — not change detection. Distinguishing flooding specifically (water in an abnormal location) from a permanent water body would require comparing multiple dates, a direction partially explored in a separate climate correlation analysis.</p>
           <div class="stack">PyTorch · U-Net / ResNet34 · Sentinel-1 SAR · Docker · Vertex AI · Cloud Run</div>
           <div class="links">
             <a href="https://github.com/kelevy/flood-detection" target="_blank" rel="noopener">View on GitHub</a>
