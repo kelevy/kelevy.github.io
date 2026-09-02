@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kevin Levy</title>
+<meta name="description" content="Kevin Levy — astrophysicist and data scientist working across cosmology, climate, and quantitative finance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -86,7 +87,9 @@
   .work-item .venue { color: var(--muted); font-size: 15px; margin-top: 4px; }
   .work-item .stack { margin-top: 14px; font-size: 14px; color: var(--muted); }
   .work-item .links { margin-top: 12px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 14.5px; }
-  .metric { color: var(--teal); font-variant-numeric: tabular-nums; font-weight: 600; }
+  .work-item .figure { margin-top: 20px; }
+  .work-item .figure img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+  .work-item .figure .cap { margin-top: 8px; font-size: 13px; color: var(--muted); }
 
   footer { padding: 70px 0 60px; }
   footer .lede2 { color: var(--muted); max-width: 50ch; }
@@ -122,7 +125,30 @@
   <div class="page">
     <h2 class="heading">Projects</h2>
 
+    <div class="work-item">
+      <div class="row">
+        <div class="gutter">
+          <div class="num idx">01</div>
+        </div>
+        <div>
+          <h3>Flood detection from Sentinel-1 SAR imagery</h3>
+          <p class="desc">Detecting flooding quickly matters for disaster response, but the moments floods happen are often exactly when optical satellites are least useful — heavy cloud cover during storms blocks the view entirely. Synthetic Aperture Radar solves this: it penetrates cloud cover and works day or night, at the cost of being hard to read directly, since water shows up as a subtle, dark, low-texture region within otherwise noisy backscatter rather than an obvious visual feature.</p>
+          <p class="desc">This project trains a U-Net with a ResNet34 encoder to segment water extent directly from raw Sentinel-1 imagery, trained on the Sen1Floods11 dataset, reaching a mean IoU of <span class="metric">0.79</span>. It's trained on Vertex AI and deployed as a live, containerized API on Google Cloud Run.</p>
+          <div class="figure">
+            <img src="assets/truth_vs_prediction.png" alt="Comparison of SAR input, ground truth flood mask, and the model's predicted flood mask along a river channel">
+            <div class="cap">SAR input, ground truth, and predicted flood extent along a river channel, on a held-out tile.</div>
+          </div>
+          <p class="desc" style="margin-top:18px; font-size:15px; color:var(--muted);">Scope note: the model performs per-image water segmentation — identifying standing water in a single SAR scene — not change detection. Distinguishing flooding specifically (water in an abnormal location) from a permanent water body would require comparing multiple dates, a direction partially explored in a separate climate correlation analysis.</p>
+          <div class="stack">PyTorch · U-Net / ResNet34 · Sentinel-1 SAR · Docker · Vertex AI · Cloud Run</div>
+          <div class="links">
+            <a href="https://github.com/kelevy/flood-detection" target="_blank" rel="noopener">View on GitHub</a>
+            <a href="#" data-fill="demo-flood">Try the live demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
+  </div>
 </section>
 
 </body>
