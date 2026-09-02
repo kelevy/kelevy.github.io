@@ -136,7 +136,9 @@
           <p class="desc">This project trains a U-Net with a ResNet34 encoder to segment water extent directly from raw Sentinel-1 imagery, trained on the Sen1Floods11 dataset, reaching a mean IoU of <span class="metric">0.79</span>. It's trained on Vertex AI and deployed as a live, containerized API on Google Cloud Run.</p>
           <div class="figure">
             <img src="assets/truth_vs_prediction.png" alt="Comparison of SAR input, ground truth flood mask, and the model's predicted flood mask along a river channel">
-            <div class="cap">SAR input, ground truth, and predicted flood extent along a river channel, on a held-out tile.</div>
+            <div class="cap">SAR input, ground truth, and predicted flood extent along a river channel, on a held-out tile. The gray regions in the ground truth panels mark pixels with no valid label, typically due to the
+diagonal swath boundary characteristic of Sentinel-1's imaging geometry or other data gaps. These regions are excluded from both training and metric calculations. The model's own
+predictions never include gray, since it only outputs a binary water/not-water classification.</div>
           </div>
           <div class="stack">PyTorch · U-Net / ResNet34 · Sentinel-1 SAR · Docker · Vertex AI · Cloud Run</div>
           <div class="links">
