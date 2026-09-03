@@ -23,11 +23,11 @@
   html { scroll-behavior: smooth; }
 
   body {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="%2340E0D0" stroke-width="2"/><line x1="12" y1="1" x2="12" y2="5" stroke="%2340E0D0" stroke-width="2"/><line x1="12" y1="19" x2="12" y2="23" stroke="%2340E0D0" stroke-width="2"/><line x1="1" y1="12" x2="5" y2="12" stroke="%2340E0D0" stroke-width="2"/><line x1="19" y1="12" x2="23" y2="12" stroke="%2340E0D0" stroke-width="2"/></svg>') 12 12, auto;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21" stroke="%231AA398" stroke-width="2"/><line x1="3" y1="12" x2="21" y2="12" stroke="%231AA398" stroke-width="2"/></svg>') 12 12, auto;
   }
 
   a, button {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="%2340E0D0"/></svg>') 12 12, pointer;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="%231AA398"/></svg>') 12 12, pointer;
   }
 
   body {
@@ -310,6 +310,10 @@
         <div>
           <h3>A Foreground-Immune CMB-Cluster Lensing Estimator</h3>
           <p class="desc">A method for measuring the CMB lensing signal of galaxy clusters that removes contamination from the thermal Sunyaev-Zel'dovich effect, which otherwise biases cluster mass estimates if left in.</p>
+          <div class="figure">
+            <img src="assets/lensing_pipeline.png" alt="Pipeline diagram showing lensed and random cutouts rotated and stacked, then subtracted to isolate the dipole lensing signal from the tSZ contamination">
+            <div class="cap">The stacking pipeline: lensed cutouts around clusters are rotated to align the expected dipole signal and stacked, then a background stack from random sky positions is subtracted off to isolate the pure dipole from the tSZ contamination sitting on top of it.</div>
+          </div>
           <div class="venue">Levy, Raghunathan &amp; Basu, 2023 · JCAP 08 (2023) 020 — <a href="https://arxiv.org/abs/2305.06326" target="_blank" rel="noopener">read the paper</a></div>
         </div>
       </div>
