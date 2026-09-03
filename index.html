@@ -93,8 +93,87 @@
 
   footer { padding: 70px 0 60px; }
   footer .lede2 { color: var(--muted); max-width: 50ch; }
-  footer .channels { margin-top: 24px; display: flex; gap: 26px; flex-wrap: wrap; font-size: 15.5px; }
+  footer .channels { margin-top: 28px; display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 15.5px; }
   footer .fine { margin-top: 50px; font-size: 13.5px; color: var(--muted); }
+
+  .btn-outline {
+    font-family: 'Inter', sans-serif;
+    font-size: 15.5px;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--ink);
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 0;
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
+  .btn-outline:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+  /* Modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 23, 29, 0.45);
+    z-index: 100;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    max-width: 440px;
+    width: 100%;
+    padding: 36px 32px 32px;
+    position: relative;
+  }
+  .modal-box h3 { font-size: 22px; margin-bottom: 6px; }
+  .modal-box .sub { color: var(--muted); font-size: 14.5px; margin-bottom: 24px; }
+  .modal-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 4px;
+  }
+  .modal-close:hover { color: var(--ink); }
+  .field { margin-bottom: 20px; }
+  .field label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .field input, .field textarea {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 15.5px;
+    color: var(--ink);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 6px 2px;
+    resize: vertical;
+  }
+  .field input:focus, .field textarea:focus {
+    outline: none;
+    border-bottom-color: var(--blue);
+  }
+  .field textarea { min-height: 90px; }
+  .modal-box .send-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 15.5px;
+    color: var(--paper);
+    background: var(--ink);
+    border: none;
+    padding: 11px 22px;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+  .modal-box .send-btn:hover { background: var(--blue); }
 
   @media (max-width: 640px) {
     .row { grid-template-columns: 40px 1fr; column-gap: 16px; }
@@ -112,6 +191,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#work">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </div>
@@ -210,7 +290,55 @@
   
 </section>
 
+<footer class="divider" id="contact">
+  <div class="page">
+    <h2 class="heading">Contact</h2>
+    <p class="lede2">Always happy to talk about anything data related.</p>
+    <div class="channels">
+      <button class="btn-outline" onclick="document.getElementById('contact-modal').classList.add('open')">Send a message</button>
+      <a href="#" data-fill="linkedin">LinkedIn</a>
+    </div>
+    <p class="fine">Kevin Levy · Astrophysics, University of Melbourne, 2026</p>
+  </div>
+</footer>
 
-  
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close" onclick="document.getElementById('contact-modal').classList.remove('open')">&times;</button>
+    <h3>Get in touch</h3>
+    <p class="sub">This opens your email client with the message pre-filled.</p>
+    <form id="contact-form">
+      <div class="field">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" required>
+      </div>
+      <div class="field">
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" required>
+      </div>
+      <div class="field">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" required></textarea>
+      </div>
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.getElementById('contact-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('cf-name').value;
+    var email = document.getElementById('cf-email').value;
+    var message = document.getElementById('cf-message').value;
+    var subject = encodeURIComponent('Message from ' + name + ' via website');
+    var body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+    window.location.href = 'mailto:kelevy96@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+
 </body>
 </html>
