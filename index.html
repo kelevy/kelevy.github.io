@@ -112,6 +112,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#work">Projects</a></li>
+      <li><a href="#papers">Papers</a></li>
     </ul>
   </div>
 </div>
@@ -126,7 +127,7 @@
   <div class="page">
     <h2 class="heading">About</h2>
     <div class="about">
-      <p>Hi, I'm Kevin! I grew up in Luxembourg and did a bachelor's and master's in physics and astrophysics at the University of Bonn, Germany. After my studies, I worked briefly as a BI developer back home before moving to Australia to do a PhD in astrophysics at the University of Melbourne.</p>
+      <p>Hi, I'm Kevin! I grew up in Luxembourg, did a bachelor's and master's in physics and astrophysics at the University of Bonn, Germany. After my studies, I worked briefly as a BI developer back home before moving to Australia for a PhD in astrophysics at the University of Melbourne.</p>
       <p>Outside of work, I like to work out, play guitar, and get lost in a good movie or TV series. I also love to travel whenever I get the chance, and I'm always up for trying something new.</p>
     </div>
   </div>
@@ -143,7 +144,7 @@
         </div>
         <div>
           <h3>Flood detection from Sentinel-1 SAR imagery</h3>
-          <p class="desc">Detecting flooding quickly matters for disaster response, but the moments floods happen are often exactly when optical satellites are least useful as heavy cloud cover during storms blocks the view entirely. Synthetic Aperture Radar solves this: it penetrates cloud cover and works day or night, at the cost of being hard to read directly, since water shows up as a subtle, dark, low-texture region within otherwise noisy backscatter rather than an obvious visual feature.</p>
+          <p class="desc">Detecting flooding quickly matters for disaster response, but the moments floods happen are often exactly when optical satellites are least useful — heavy cloud cover during storms blocks the view entirely. Synthetic Aperture Radar solves this: it penetrates cloud cover and works day or night, at the cost of being hard to read directly, since water shows up as a subtle, dark, low-texture region within otherwise noisy backscatter rather than an obvious visual feature.</p>
           <p class="desc">This project trains a U-Net with a ResNet34 encoder to segment water extent directly from raw Sentinel-1 imagery, trained on the Sen1Floods11 dataset, reaching a mean IoU of <span class="metric">0.79</span>. It's trained on Vertex AI and deployed as a live, containerized API on Google Cloud Run.</p>
           <div class="figure">
             <img src="assets/truth_vs_prediction.png" alt="Comparison of SAR input, ground truth flood mask, and the model's predicted flood mask along a river channel">
@@ -154,6 +155,39 @@
             <a href="https://github.com/kelevy/flood-detection" target="_blank" rel="noopener">View on GitHub</a>
             <a href="https://flood-detection-api-339736685737.europe-west1.run.app" data-fill="demo-flood">Try the live demo</a>
           </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="divider" id="papers">
+  <div class="page">
+    <h2 class="heading">Papers</h2>
+
+    <div class="work-item">
+      <div class="row">
+        <div class="gutter">
+          <div class="num idx">01</div>
+        </div>
+        <div>
+          <h3 class="cite">Levy, Raghunathan &amp; Basu, 2023</h3>
+          <p class="desc">A method for measuring the CMB lensing signal around galaxy clusters that removes contamination from the thermal Sunyaev-Zel'dovich effect, which otherwise biases cluster mass estimates from SPT-3G data if left in.</p>
+          <div class="venue">A foreground-immune CMB-cluster lensing estimator — JCAP 08 (2023) 020 — <a href="https://arxiv.org/abs/2305.06326" target="_blank" rel="noopener">read the paper</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="row">
+        <div class="gutter">
+          <div class="num idx">02</div>
+        </div>
+        <div>
+          <h3 class="cite">Levy et al., 2026</h3>
+          <p class="desc">Reconstructs the CMB lensing signal using two years of temperature data from the SPT-3G Summer Survey, extending the cluster-lensing methods above to a full-survey measurement.</p>
+          <div class="venue">CMB Lensing Reconstruction Using Two Years of Temperature Data from the SPT-3G Summer Survey — arXiv:2607.05784 — <a href="https://arxiv.org/abs/2607.05784" target="_blank" rel="noopener">read the paper</a></div>
         </div>
       </div>
     </div>
