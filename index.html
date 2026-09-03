@@ -143,7 +143,7 @@
         </div>
         <div>
           <h3>Flood detection from Sentinel-1 SAR imagery</h3>
-          <p class="desc">Detecting flooding quickly matters for disaster response, but the moments floods happen are often exactly when optical satellites are least useful — heavy cloud cover during storms blocks the view entirely. Synthetic Aperture Radar solves this: it penetrates cloud cover and works day or night, at the cost of being hard to read directly, since water shows up as a subtle, dark, low-texture region within otherwise noisy backscatter rather than an obvious visual feature.</p>
+          <p class="desc">Detecting flooding quickly matters for disaster response, but the moments floods happen are often exactly when optical satellites are least useful as heavy cloud cover during storms blocks the view entirely. Synthetic Aperture Radar solves this: it penetrates cloud cover and works day or night, at the cost of being hard to read directly, since water shows up as a subtle, dark, low-texture region within otherwise noisy backscatter rather than an obvious visual feature.</p>
           <p class="desc">This project trains a U-Net with a ResNet34 encoder to segment water extent directly from raw Sentinel-1 imagery, trained on the Sen1Floods11 dataset, reaching a mean IoU of <span class="metric">0.79</span>. It's trained on Vertex AI and deployed as a live, containerized API on Google Cloud Run.</p>
           <div class="figure">
             <img src="assets/truth_vs_prediction.png" alt="Comparison of SAR input, ground truth flood mask, and the model's predicted flood mask along a river channel">
