@@ -44,7 +44,7 @@
     color: var(--muted);
   }
 
-  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
 
   /* Nav */
   .nav { padding: 30px 0 0; }
@@ -56,12 +56,36 @@
   .nav a:hover { color: var(--ink); }
 
   /* Page grid: a persistent left margin gutter beside the text column, like a manuscript */
-  .page { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+  .page { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
   .row { display: grid; grid-template-columns: 64px 1fr; column-gap: 28px; }
   .row .gutter { padding-top: 3px; }
 
   /* Masthead */
   .masthead { padding: 88px 0 8px; }
+  .masthead .wrap {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: end;
+  }
+  .masthead h1 {
+    font-size: clamp(48px, 7vw, 84px);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+  }
+  .tagline {
+    margin-top: 18px;
+    font-size: 18px;
+    color: var(--muted);
+    max-width: var(--text-col);
+  }
+  .hero-photo img {
+    width: 200px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--rule);
+  }
   .lede {
     font-size: 18px;
     max-width: var(--text-col);
@@ -178,6 +202,9 @@
 
   @media (max-width: 640px) {
     .work-grid { grid-template-columns: 1fr; gap: 40px; }
+    .masthead .wrap { grid-template-columns: 1fr; }
+    .hero-photo { order: -1; }
+    .hero-photo img { width: 120px; aspect-ratio: 1; }
     .row { grid-template-columns: 40px 1fr; column-gap: 16px; }
     .fig { width: 36px; height: 36px; }
     .wrap, .page { padding: 0 20px; }
@@ -200,7 +227,13 @@
 
 <div class="masthead" id="top">
   <div class="wrap">
-    <p class="lede" style="margin-top:0; font-size:19px;">Data Scientist and PhD Astrophysicist specializing in statistical inference, machine learning, and scientific computing. Experienced in building end-to-end Python pipelines and HPC workflows, from raw data acquisition to statistical modeling and uncertainty quantification.</p>
+    <div>
+      <h1>Kevin Levy</h1>
+      <p class="tagline">Data Scientist · Astrophysicist | Statistical Inference · Machine Learning · Scientific Computing</p>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/profile.jpg" alt="Kevin Levy">
+    </div>
   </div>
 </div>
 
