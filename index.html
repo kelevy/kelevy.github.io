@@ -110,6 +110,7 @@
   <div class="wrap">
     <a class="name" href="#top">Kevin Levy</a>
     <ul>
+      <li><a href="#about">About</a></li>
       <li><a href="#work">Projects</a></li>
     </ul>
   </div>
@@ -120,6 +121,16 @@
     <p class="lede" style="margin-top:0; font-size:19px;">Data Scientist and PhD Astrophysicist specializing in statistical inference, machine learning, and scientific computing. Experienced in building end-to-end Python pipelines and HPC workflows, from raw data acquisition to statistical modeling and uncertainty quantification.</p>
   </div>
 </div>
+
+<section class="divider" id="about">
+  <div class="page">
+    <h2 class="heading">About</h2>
+    <div class="about">
+      <p>Hi, I'm Kevin! I grew up in Luxembourg, did a bachelor's and master's in physics and astrophysics at the University of Bonn, Germany. After my studies, I worked briefly as a BI developer back home before moving to Australia for a PhD in astrophysics at the University of Melbourne.</p>
+      <p>Outside of work, I like to work out, play guitar, and get lost in a good movie or TV series. I also love to travel whenever I get the chance, and I'm always up for trying something new.</p>
+    </div>
+  </div>
+</section>
 
 <section class="divider" id="work">
   <div class="page">
@@ -136,7 +147,7 @@
           <p class="desc">This project trains a U-Net with a ResNet34 encoder to segment water extent directly from raw Sentinel-1 imagery, trained on the Sen1Floods11 dataset, reaching a mean IoU of <span class="metric">0.79</span>. It's trained on Vertex AI and deployed as a live, containerized API on Google Cloud Run.</p>
           <div class="figure">
             <img src="assets/truth_vs_prediction.png" alt="Comparison of SAR input, ground truth flood mask, and the model's predicted flood mask along a river channel">
-            <div class="cap">SAR input, ground truth, and predicted flood extent along a river channel. In the ground truth, gray marks pixels with no valid label, skipped when computing loss and metrics. The model still predicts water/not-water there, since it only sees raw SAR values and has no way to know which pixels are labeled. Its accuracy in these regions, however, cannot be verified. </div>
+            <div class="cap">SAR input, ground truth, and predicted flood extent along a river channel. In the ground truth, gray marks pixels with no valid label, skipped when computing loss and metrics. The model still predicts water/not-water there, since it only sees raw SAR values and has no way to know which pixels are labeled. Its accuracy in these regions, however, cannot be verified.</div>
           </div>
           <div class="stack">PyTorch · U-Net / ResNet34 · Sentinel-1 SAR · Docker · Vertex AI · Cloud Run</div>
           <div class="links">
