@@ -309,11 +309,11 @@
         </div>
         <div>
           <h3>A Foreground-Immune CMB-Cluster Lensing Estimator</h3>
-          <p class="desc">Galaxy clusters gravitationally lens the CMB, producing a characteristic dipole pattern that can be used to estimate cluster masses, including for high-redshift clusters (z ≳ 1) that future surveys are expected to detect. The catch is that conventional temperature-based estimators are biased by cluster-correlated foregrounds, particularly the thermal and kinematic Sunyaev-Zel'dovich effects, which sit on the same patch of sky and contaminate the signal if left untreated.</p>
-          <p class="desc">This project implements a foreground-immune version of the estimator that stays robust to those contaminants while remaining simple to run, and reaches a signal-to-noise competitive with both other temperature-based and polarization-based approaches for current and future CMB surveys.</p>
+          <p class="desc">Galaxy clusters gravitationally lens the CMB, producing a characteristic dipole pattern that can be used to estimate cluster masses. The catch is that conventional temperature-based estimators are biased by cluster-correlated foregrounds, particularly the thermal and kinematic Sunyaev-Zel'dovich effects.</p>
+          <p class="desc">This project implements a foreground-immune version of a CMB-cluster lensing estimator that stays robust to those contaminants while remaining simple to run, and reaches a signal-to-noise competitive with other standard cluster lensing estimators for CMB surveys.</p>
           <div class="figure">
             <img src="assets/lensing_pipeline.png" alt="Pipeline diagram showing lensed and random cutouts rotated and stacked, then subtracted to isolate the dipole lensing signal from the tSZ contamination">
-            <div class="cap">The stacking trick for removing the thermal SZ signal: cutouts around clusters are rotated to align their lensing dipoles and stacked, which keeps the dipole but leaves the (rotationally symmetric) tSZ signal untouched. Randomly rotating and stacking the same cutouts instead cancels the dipole out, isolating a clean estimate of the mean tSZ signal, which is then subtracted from the first stack.</div>
+            <div class="cap"> How the pipeline separates the two signals: stacking the cutouts as-is keeps both the lensing dipole and a leftover average tSZ signal, since tSZ looks the same from every angle. Rotating each cutout randomly before stacking scrambles the dipole away to nothing, leaving only that average tSZ signal behind, which can then be subtracted from the first stack to isolate the lensing dipole on its own. </div>
           </div>
           <div class="venue">Levy, Raghunathan &amp; Basu, 2023 · JCAP 08 (2023) 020 — <a href="https://arxiv.org/abs/2305.06326" target="_blank" rel="noopener">read the paper</a></div>
         </div>
