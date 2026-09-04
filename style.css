@@ -12,11 +12,11 @@
   html { scroll-behavior: smooth; }
 
   body {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,20 13,15" fill="none" stroke="%23158C81" stroke-width="2" stroke-linejoin="round"/></svg>') 3 2, auto;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,20 13,15" fill="none" stroke="%237B3FA6" stroke-width="2" stroke-linejoin="round"/></svg>') 3 2, auto;
   }
 
   a, button {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,20 13,15" fill="%23158C81"/></svg>') 3 2, pointer;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,20 13,15" fill="%237B3FA6"/></svg>') 3 2, pointer;
   }
 
   body {
@@ -78,10 +78,11 @@
   }
   .hero-photo img {
     width: 260px;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1;
     object-fit: cover;
     display: block;
-    border: 1px solid var(--rule);
+    border-radius: 50%;
+    border: 5px solid #1AA398;
   }
   .lede {
     font-size: 18px;
@@ -95,6 +96,8 @@
 
   .about p { max-width: var(--text-col); }
   .about p + p { margin-top: 16px; }
+
+  #about .page { max-width: 620px; margin: 0 auto; }
 
   /* Works list */
   .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 40px; }
