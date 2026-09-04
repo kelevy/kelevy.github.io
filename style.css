@@ -98,7 +98,26 @@
   .about p { max-width: var(--text-col); }
   .about p + p { margin-top: 16px; }
 
-  #about .page { max-width: 780px; margin: 0 auto; }
+  #about .page {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .skills-wrap { padding-top: 4px; }
+  .skills-tags { display: flex; flex-wrap: wrap; gap: 12px; }
+  .skill-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    padding: 9px 16px;
+    white-space: nowrap;
+  }
 
   /* Works list */
   .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 40px; }
@@ -203,6 +222,7 @@
 
   @media (max-width: 640px) {
     .work-grid { grid-template-columns: 1fr; gap: 40px; }
+    #about .page { grid-template-columns: 1fr; gap: 36px; }
     .masthead .wrap { grid-template-columns: 1fr; }
     .hero-photo { order: -1; }
     .hero-photo img { width: 120px; aspect-ratio: 1; }
