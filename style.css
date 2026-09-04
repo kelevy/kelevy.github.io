@@ -12,11 +12,11 @@
   html { scroll-behavior: smooth; }
 
   body {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="12,2 22,12 12,22 2,12" fill="none" stroke="%23158C81" stroke-width="2"/></svg>') 12 12, auto;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,20 13,15" fill="none" stroke="%23158C81" stroke-width="2" stroke-linejoin="round"/></svg>') 3 2, auto;
   }
 
   a, button {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="12,3 21,12 12,21 3,12" fill="%23158C81"/></svg>') 12 12, pointer;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,20 13,15" fill="%23158C81"/></svg>') 3 2, pointer;
   }
 
   body {
