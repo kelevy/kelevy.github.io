@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Kevin Levy</title>
+<meta name="description" content="Kevin Levy — astrophysicist and data scientist working across cosmology, climate, and quantitative finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer id="contact" style="padding-top: 64px;">
+  <div class="page">
+    <h2 class="heading">Contact</h2>
+    <p class="lede2">Always happy to talk about anything data related.</p>
+    <div class="channels">
+      <button class="btn-outline" onclick="document.getElementById('contact-modal').classList.add('open')">Send a message</button>
+      <a href="#" data-fill="linkedin">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close" onclick="document.getElementById('contact-modal').classList.remove('open')">&times;</button>
+    <h3>Get in touch</h3>
+    <p class="sub">This opens your email client with the message pre-filled.</p>
+    <form id="contact-form">
+      <div class="field">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" required>
+      </div>
+      <div class="field">
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" required>
+      </div>
+      <div class="field">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" required></textarea>
+      </div>
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.getElementById('contact-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('cf-name').value;
+    var email = document.getElementById('cf-email').value;
+    var message = document.getElementById('cf-message').value;
+    var subject = encodeURIComponent('Message from ' + name + ' via website');
+    var body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+    window.location.href = 'mailto:kelevy96@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+
+</body>
+</html>
