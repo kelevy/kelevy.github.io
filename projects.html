@@ -99,8 +99,8 @@
         <h3>Bayesian Redshift Distribution Modeling</h3>
         <p class="desc">Every large-scale structure measurement depends on knowing how far away the galaxies actually are, and photometric surveys only give a rough estimate of that. This project fits Gaussian mixture models to photometric redshift distributions using MCMC sampling, uses the Bayesian information criterion to decide how many components the data actually supports, and corrects iteratively for selection bias.</p>
         <div class="figure">
-            <img src="assets/bin4_best.png">
-          </div>
+          <img src="assets/bin4_best.png">
+          <div class="cap">The fitted redshift distribution for one tomographic bin (0.7 &lt; z<sub>phot</sub> ≤ 0.9): red points are the actual data with uncertainties, the solid blue curve is the three-component Gaussian mixture model fit to it, and the dashed cyan curves show the three individual Gaussians that get added together to make it. Three components was the best-fitting choice for this bin according to the BIC. The magenta line marks the model's mean redshift, and the grey band is the bin's actual selection range.</div>   
         <div class="stack">Python · emcee (MCMC) · Gaussian mixture models · BIC model selection</div>
         <div class="links">
          <a href="https://github.com/kelevy/redshift-gmm" data-fill="github-redshift">View on GitHub</a>
