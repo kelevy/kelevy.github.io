@@ -12,11 +12,11 @@
 html { scroll-behavior: smooth; }
 
 body {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 360 370"><polygon points="62,34 276,212 150,216 62,322" fill="none" stroke="%237B4FD6" stroke-width="28" stroke-linejoin="round"/></svg>') 5 3, auto;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 360 370"><polygon points="62,34 276,212 150,216 62,322" fill="none" stroke="%237B4FD6" stroke-width="28" stroke-linejoin="round"/></svg>') 4 2, auto;
 }
 
 a, button {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 360 370"><polygon points="62,34 276,212 150,216 62,322" fill="%23C58AF9" stroke="%237B4FD6" stroke-width="28" stroke-linejoin="round"/></svg>') 5 3, pointer;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 360 370"><polygon points="62,34 276,212 150,216 62,322" fill="%237B4FD6" stroke="%237B4FD6" stroke-width="28" stroke-linejoin="round"/></svg>') 4 2, pointer;
 }
 
 body {
