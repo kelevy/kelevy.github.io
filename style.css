@@ -12,11 +12,11 @@
 html { scroll-behavior: smooth; }
 
 body {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32"><rect x="3" y="2" width="18" height="28" rx="9" fill="%237B4FD6" stroke="%234B2A94" stroke-width="1.5"/><path d="M12 2 V13 M3 13 H21" stroke="%234B2A94" stroke-width="1.2" fill="none"/><rect x="10.5" y="5" width="3" height="5" rx="1.5" fill="white"/></svg>') 12 3, auto;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,21 17,14" fill="white" stroke="%237B4FD6" stroke-width="2" stroke-linejoin="round"/></svg>') 3 2, auto;
 }
 
 a, button {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32"><rect x="3" y="2" width="18" height="28" rx="9" fill="%239B6FF0" stroke="%234B2A94" stroke-width="1.5"/><path d="M12 2 V13 M3 13 H21" stroke="%234B2A94" stroke-width="1.2" fill="none"/><rect x="10.5" y="5" width="3" height="5" rx="1.5" fill="white"/></svg>') 12 3, pointer;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,21 17,14" fill="%237B4FD6" stroke="%237B4FD6" stroke-width="2" stroke-linejoin="round"/></svg>') 3 2, pointer;
 }
 
 body {
