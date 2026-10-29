@@ -306,3 +306,12 @@ footer .fine { margin-top: 50px; font-size: 13.5px; color: var(--muted); }
     opacity: 0;
   }
 }
+
+/* Logo thumbnails and sub-entries with figures (work.html) */
+.card .thumb.logo img { max-width: 160px; border: none; border-radius: 8px; }
+.card .sub-entry { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: start; }
+.card .sub-entry .sub-thumb img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 6px; }
+
+@media (max-width: 800px) {
+  .card .sub-entry { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+}
