@@ -67,7 +67,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-
 }
 .hero-photo { order: -1; }
 .masthead h1 {
-  font-size: clamp(48px, 7vw, 84px);
+  font-size: clamp(40px, 5.5vw, 64px);
   line-height: 1.02;
   letter-spacing: -0.015em;
 }
@@ -78,11 +78,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-
   max-width: 900px;
 }
 .hero-photo img {
-  width: 170px;
+  width: 210px;
   aspect-ratio: 1;
   object-fit: cover;
   display: block;
-  border-radius: 50%;
+  border-radius: 12px;
   border: 3px solid #1AA398;
   box-shadow: 0 10px 28px rgba(20, 23, 29, 0.18);
 }
