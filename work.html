@@ -1,95 +1,317 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Work — Kevin Levy</title>
-<meta name="description" content="Kevin Levy — astrophysicist and data scientist working across cosmology, climate, and quantitative finance.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root {
+  --paper: #F2F1EC;
+  --ink: #14171D;
+  --muted: #5A5F68;
+  --blue: #2C4A9E;
+  --teal: #3F7A6F;
+  --rule: #DBD8CE;
+  --text-col: 660px;
+}
 
-<div class="nav">
-  <div class="wrap">
-    <ul>
-      <li><a href="index.html">About</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</div>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-<section id="work" style="padding-top: 64px;">
-  <div class="page">
-    <h2 class="heading">Work</h2>
-    <p class="desc intro">A selection of my research and industry experience.</p>
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 360 370"><polygon points="62,34 276,212 150,216 62,322" fill="none" stroke="%237B4FD6" stroke-width="28" stroke-linejoin="round"/></svg>') 4 2, auto;
+}
 
-    <div class="card-list">
+a, button {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 360 370"><polygon points="62,34 276,212 150,216 62,322" fill="%237B4FD6" stroke="%237B4FD6" stroke-width="28" stroke-linejoin="round"/></svg>') 4 2, pointer;
+}
 
-      <!-- PhD -->
-      <div class="card">
-        <div class="thumb logo">
-          <img src="assets/unimelb_logo.png" alt="University of Melbourne logo">
-        </div>
-        <div>
-          <h3>Doctoral Researcher, Astrophysics</h3>
-          <div class="meta">University of Melbourne · Jun 2022 – Jun 2026</div>
-          <p class="desc">As part of the South Pole Telescope (SPT-3G) Collaboration, I worked on gravitational lensing of the cosmic microwave background. I led the development of two end-to-end Python pipelines: one that reconstructs and statistically characterizes the Universe's matter distribution from a new SPT-3G dataset, and one that extracts unbiased galaxy-cluster mass estimates from millimeter-wave data and improved measurement precision by about 2× when applied to survey data. Along the way I used maximum-likelihood estimation, jackknife resampling and chi-square/PTE statistics, and designed a comprehensive suite of systematic tests to make the results robust and reproducible.</p>
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
 
-          <div class="sub-entry">
-            <div>
-              <h4>CMB Lensing Reconstruction Using Two Years of Temperature Data from the SPT-3G Summer Survey</h4>
-              <p class="desc">The first reconstruction of the lensing signal from the SPT-3G Summer survey, covering about 2,640 deg² across three fields, with a lensing amplitude of 1.015 ± 0.053 relative to the Planck 2018 prediction.</p>
-              <div class="meta">Levy et al., 2026 · arXiv:2607.05784</div>
-              <div class="links">
-                <a href="https://arxiv.org/abs/2607.05784" target="_blank" rel="noopener">Read the paper</a>
-                <a href="https://github.com/kelevy/spt3g-summerfield-lensing" target="_blank" rel="noopener">View on GitHub</a>
-              </div>
-            </div>
-            <div class="sub-thumb">
-              <img src="assets/comparison.png" alt="Lensing power spectrum from SPT-3G Summer data compared against Planck 2018, Planck PR4, ACT DR6, and SPT-3G D1 Main">
-            </div>
-          </div>
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; letter-spacing: -0.01em; margin: 0; }
 
-          <div class="sub-entry">
-            <div>
-              <h4>A Foreground-Immune CMB-Cluster Lensing Estimator</h4>
-              <p class="desc">A cluster-lensing estimator that stays robust to thermal and kinematic Sunyaev-Zel'dovich contamination, with a signal-to-noise competitive with other temperature-based and polarization-based approaches.</p>
-              <div class="meta">Levy, Raghunathan &amp; Basu, 2023 · JCAP 08 (2023) 020</div>
-              <div class="links">
-                <a href="https://arxiv.org/abs/2305.06326" target="_blank" rel="noopener">Read the paper</a>
-                <a href="https://github.com/kelevy/cmb-cluster-lensing" target="_blank" rel="noopener">View on GitHub</a>
-              </div>
-            </div>
-            <div class="sub-thumb">
-              <img src="assets/lensing_pipeline.png" alt="Pipeline diagram showing lensed and random cutouts rotated and stacked, then subtracted to isolate the dipole lensing signal">
-            </div>
-          </div>
-        </div>
-      </div>
+a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(44, 74, 158, 0.35); }
+a:hover { border-color: var(--blue); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 
-      <!-- Delta IT -->
-      <div class="card">
-        <div class="thumb logo">
-          <img src="assets/wiges_logo.png" alt="Wiges logo">
-        </div>
-        <div>
-          <h3>BI Developer</h3>
-          <div class="meta">Delta Information Technologies, Mamer, Luxembourg · Dec 2021 – May 2022</div>
-          <p class="desc">Used SQL to build and maintain database views integrated with the company's ERP platform, and developed dashboards and charts to track financial, buying and selling KPIs across the client base. Worked directly with clients, on-site and over calls, to gather requirements and customize each dashboard to their needs.</p>
-          <div class="stack">SQL · ERP integration · Dashboards · Stakeholder management</div>
-        </div>
-      </div>
+.num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--muted);
+}
 
-    </div>
-  </div>
-</section>
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
 
-</body>
-</html>
+/* Nav */
+.nav { padding: 30px 0 0; }
+.nav .wrap { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 14px; }
+.nav .name { font-family: 'Inter', -apple-system, sans-serif; font-size: 16px; font-weight: 600; border: none; color: var(--ink); }
+.nav .name:hover { color: var(--blue); }
+.nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; }
+.nav a { color: var(--muted); border: none; font-size: 14.5px; }
+.nav a:hover { color: var(--ink); }
+
+/* Page grid: a persistent left margin gutter beside the text column, like a manuscript */
+.page { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+.row { display: grid; grid-template-columns: 64px 1fr; column-gap: 28px; }
+.row .gutter { padding-top: 3px; }
+
+/* Masthead */
+.masthead { padding: 64px 0 8px; }
+.masthead .wrap {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+}
+.masthead h1 {
+  font-size: clamp(48px, 7vw, 84px);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+}
+.tagline {
+  margin-top: 18px;
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 900px;
+}
+.hero-photo img {
+  width: 260px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  border: 3px solid #1AA398;
+  box-shadow: 0 10px 28px rgba(20, 23, 29, 0.18);
+}
+.lede {
+  font-size: 18px;
+  max-width: var(--text-col);
+  color: var(--ink);
+}
+
+section { padding: 64px 0; }
+section.divider { border-top: 1px solid var(--rule); }
+h2.heading { font-size: 22px; margin-bottom: 30px; }
+
+.about p { max-width: var(--text-col); }
+.about p + p { margin-top: 16px; }
+
+#about .page {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.skills-wrap { padding-top: 4px; }
+.skills-tags { display: flex; flex-wrap: wrap; gap: 12px; }
+.skill-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  padding: 9px 16px;
+  white-space: nowrap;
+}
+
+/* Works list (used by publications.html) */
+.work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 40px; }
+.work-item { padding: 0; }
+.work-grid .work-item { border-bottom: none; }
+.work-item .row { align-items: start; }
+.fig { width: 56px; height: 56px; display: block; }
+.work-item .idx { margin-top: 10px; }
+
+.work-item h3 { font-size: 20px; margin-bottom: 10px; }
+.work-item h3.cite { font-style: italic; font-weight: 500; }
+.work-item p.desc { max-width: var(--text-col); color: var(--ink); }
+.work-item p.desc + p.desc { margin-top: 14px; }
+.work-item .venue { color: var(--muted); font-size: 15px; margin-top: 4px; }
+.work-item .stack { margin-top: 14px; font-size: 14px; color: var(--muted); }
+.work-item .links { margin-top: 12px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 14.5px; }
+.work-item .figure { margin-top: 20px; }
+.work-item .figure img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+.work-item .figure .cap { margin-top: 8px; font-size: 13px; color: var(--muted); }
+
+/* Intro text on Work / Projects pages */
+.intro { max-width: 60ch; margin: 0 0 40px; color: var(--muted); }
+.subheading { font-family: 'Fraunces', serif; font-size: 1.5rem; margin: 56px 0 8px; }
+
+/* Split layout (reusable elsewhere) */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.split.flip .split-text { order: 2; }
+.split.flip .split-figs { order: 1; }
+.split-figs .figure { margin-top: 0; }
+.split-figs .figure + .figure { margin-top: 24px; }
+.split img { display: block; width: 100%; height: auto; }
+
+/* Cards (work.html and projects.html) */
+.card-list { display: flex; flex-direction: column; gap: 20px; }
+
+.card {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  padding: 24px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: #F8F7F2;
+}
+.card.no-thumb { grid-template-columns: minmax(0, 1fr); }
+.card > * { min-width: 0; }
+
+.card .thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+
+.card h3 { font-size: 20px; margin-bottom: 4px; }
+.card .meta { color: var(--muted); font-size: 15px; margin-bottom: 10px; }
+.card p.desc { max-width: 72ch; color: var(--ink); }
+.card .stack { margin-top: 14px; font-size: 14px; color: var(--muted); }
+.card .links { margin-top: 12px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 14.5px; }
+
+.card .sub-entry { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.card .sub-entry h4 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 16.5px; margin: 0 0 6px; }
+.card .sub-entry .meta { margin: 6px 0 0; font-size: 14px; }
+
+footer { padding: 70px 0 60px; }
+footer .lede2 { color: var(--muted); max-width: 50ch; }
+footer .channels { margin-top: 28px; display: flex; gap: 22px; flex-wrap: wrap; align-items: center; font-size: 15.5px; }
+footer .fine { margin-top: 50px; font-size: 13.5px; color: var(--muted); }
+
+.btn-outline {
+  font-family: 'Inter', sans-serif;
+  font-size: 15.5px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 0;
+}
+.btn-outline:hover { background: var(--ink); color: var(--paper); }
+.btn-outline:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+/* Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 23, 29, 0.45);
+  z-index: 100;
+  padding: 24px;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  max-width: 440px;
+  width: 100%;
+  padding: 36px 32px 32px;
+  position: relative;
+}
+.modal-box h3 { font-size: 22px; margin-bottom: 6px; }
+.modal-box .sub { color: var(--muted); font-size: 14.5px; margin-bottom: 24px; }
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px;
+}
+.modal-close:hover { color: var(--ink); }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.field input, .field textarea {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 15.5px;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  padding: 6px 2px;
+  resize: vertical;
+}
+.field input:focus, .field textarea:focus {
+  outline: none;
+  border-bottom-color: var(--blue);
+}
+.field textarea { min-height: 90px; }
+.modal-box .send-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 15.5px;
+  color: var(--paper);
+  background: var(--ink);
+  border: none;
+  padding: 11px 22px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.modal-box .send-btn:hover { background: var(--blue); }
+
+/* Responsive */
+@media (max-width: 800px) {
+  .split { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .split.flip .split-text,
+  .split.flip .split-figs { order: initial; }
+
+  .card { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+}
+
+@media (max-width: 640px) {
+  .work-grid { grid-template-columns: 1fr; gap: 40px; }
+  #about .page { grid-template-columns: 1fr; gap: 36px; }
+  .masthead .wrap { grid-template-columns: 1fr; }
+  .hero-photo { order: -1; }
+  .hero-photo img { width: 120px; aspect-ratio: 1; }
+  .row { grid-template-columns: 40px 1fr; column-gap: 16px; }
+  .fig { width: 36px; height: 36px; }
+  .wrap, .page { padding: 0 20px; }
+  .nav ul { gap: 16px; }
+}
+
+/* Cursor particles */
+.ball-particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  margin: -3px 0 0 -3px;
+  animation: ball-burst 0.5s ease-out forwards;
+}
+@keyframes ball-burst {
+  to {
+    transform: translate(var(--dx), var(--dy)) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Logo thumbnails and sub-entries with figures (work.html) */
+.card .thumb.logo img { max-width: 160px; border: none; border-radius: 8px; }
+.card .sub-entry { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: start; }
+.card .sub-entry .sub-thumb img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 6px; }
+
+@media (max-width: 800px) {
+  .card .sub-entry { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+}
