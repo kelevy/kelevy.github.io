@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Kevin Levy</title>
+<meta name="description" content="Kevin Levy — astrophysicist and data scientist working across cosmology, climate, and quantitative finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<section id="work" style="padding-top: 64px;">
+  <div class="page">
+    <h2 class="heading">Work</h2>
+    <p class="desc intro">A selection of my research and industry experience.</p>
+
+    <div class="card-list">
+
+      <!-- PhD -->
+      <div class="card">
+        <div class="thumb">
+          <img src="assets/lensing_maps.png" alt="Reconstructed convergence maps for the three SPT-3G Summer sky patches">
+        </div>
+        <div>
+          <h3>Doctoral Researcher, Astrophysics</h3>
+          <div class="meta">University of Melbourne · Jun 2022 – Jun 2026</div>
+          <p class="desc">As part of the South Pole Telescope (SPT-3G) Collaboration, I worked on gravitational lensing of the cosmic microwave background. I led the development of two end-to-end Python pipelines: one that reconstructs and statistically characterizes the Universe's matter distribution from a new SPT-3G dataset, and one that extracts unbiased galaxy-cluster mass estimates from millimeter-wave data and improved measurement precision by about 2× when applied to survey data. Along the way I used maximum-likelihood estimation, jackknife resampling and chi-square/PTE statistics, and designed a comprehensive suite of systematic tests to make the results robust and reproducible.</p>
+
+          <div class="sub-entry">
+            <h4>CMB Lensing Reconstruction Using Two Years of Temperature Data from the SPT-3G Summer Survey</h4>
+            <p class="desc">The first reconstruction of the lensing signal from the SPT-3G Summer survey, covering about 2,640 deg² across three fields, with a lensing amplitude of 1.015 ± 0.053 relative to the Planck 2018 prediction.</p>
+            <div class="meta">Levy et al., 2026 · arXiv:2607.05784</div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2607.05784" target="_blank" rel="noopener">Read the paper</a>
+              <a href="https://github.com/kelevy/spt3g-summerfield-lensing" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="sub-entry">
+            <h4>A Foreground-Immune CMB-Cluster Lensing Estimator</h4>
+            <p class="desc">A cluster-lensing estimator that stays robust to thermal and kinematic Sunyaev-Zel'dovich contamination, with a signal-to-noise competitive with other temperature-based and polarization-based approaches.</p>
+            <div class="meta">Levy, Raghunathan &amp; Basu, 2023 · JCAP 08 (2023) 020</div>
+            <div class="links">
+              <a href="https://arxiv.org/abs/2305.06326" target="_blank" rel="noopener">Read the paper</a>
+              <a href="https://github.com/kelevy/cmb-cluster-lensing" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delta IT -->
+      <div class="card no-thumb">
+        <div>
+          <h3>BI Developer</h3>
+          <div class="meta">Delta Information Technologies, Mamer, Luxembourg · Dec 2021 – May 2022</div>
+          <p class="desc">Used SQL to build and maintain database views integrated with the company's ERP platform, and developed dashboards and charts to track financial, buying and selling KPIs across the client base. Worked directly with clients, on-site and over calls, to gather requirements and customize each dashboard to their needs.</p>
+          <div class="stack">SQL · ERP integration · Dashboards · Stakeholder management</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
