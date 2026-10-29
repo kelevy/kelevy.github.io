@@ -309,7 +309,8 @@ footer .fine { margin-top: 50px; font-size: 13.5px; color: var(--muted); }
 }
 
 /* Logo thumbnails and sub-entries with figures (work.html) */
-.card .thumb.logo img { width: 100%; max-width: none; border: none; border-radius: 8px; }
+.card .thumb.logo { align-self: center; }
+.card .thumb.logo img { width: 200px; max-width: 100%; margin: 0 auto; border: none; border-radius: 8px; }
 .card .sub-entry { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: start; }
 .card .sub-entry .sub-thumb img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 6px; }
 .card > .sub-entry { grid-column: 1 / -1; margin-top: 0; }
