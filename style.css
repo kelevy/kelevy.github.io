@@ -157,7 +157,7 @@ h2.heading { font-size: 22px; margin-bottom: 30px; }
 .work-item h3 { font-size: 20px; margin-bottom: 10px; }
 .work-item h3.cite { font-style: italic; font-weight: 500; }
 .work-item p.desc { max-width: var(--text-col); color: var(--ink); }
-.work-item p.desc + p.desc { margin-top: 14px; }
+.work-item p.desc { max-width: none; color: var(--ink); }
 .work-item .venue { color: var(--muted); font-size: 15px; margin-top: 4px; }
 .work-item .stack { margin-top: 14px; font-size: 14px; color: var(--muted); }
 .work-item .links { margin-top: 12px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 14.5px; }
